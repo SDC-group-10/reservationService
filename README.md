@@ -7,6 +7,7 @@ Miniumum requirements:
   Create: POST('/reservation', () => {
     db.getShoes();
   });
+  --------------------------------------
   Read: GET('/reservation:id', () => {
     db.getShoes();
   })
