@@ -1,11 +1,15 @@
 # API Endpoints for CRUD app
 
-Miniumum requirements:
+## Miniumum requirements:
 
 Create: POST('/reservation', () => {db.makeReservation()});
+```
 Create: POST('/booked_date', () => {db.makeBooking()});
+```
 Read: GET('/reservation:id', () => {db.getReservation(id)});
+```
 READ: GET('/booked_date:id', () => {db.getBookedDate(id)});
+```
 
 Advanced Content:
 
