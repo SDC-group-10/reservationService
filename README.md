@@ -11,7 +11,7 @@ Read: GET('/reservation:id', () => {db.getReservation(id)});
 Read: GET('/booked_date:id', () => {db.getBookedDate(id)});
 ```
 
-Advanced Content:
+## Advanced Content:
 
 ```
 Destory: DELETE('/reservation:id', () => {db.removeReservation()});
