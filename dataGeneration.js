@@ -253,6 +253,7 @@ let generateIds = () => {
 
 let generateReservations = (bookedDates, num) => {
   // console.log(' | bookedDates', bookedDates);
+  console.log(bookedDates[0], 'bd0');
   let reservations = [];
   let count = 1;
   for (let i = 0; i < bookedDates.length; i++) {
@@ -279,7 +280,7 @@ let generateReservations = (bookedDates, num) => {
       reservations.push(reservation);
     }
   }
-  console.log(reservations.length);
+  console.log(reservations[0], 'res0');
   return reservations;
 }
  //
@@ -304,7 +305,7 @@ let writeFileUsers = () => {
         // console.log(data[j].id, data[j].username);
         file.write(
         
-          data[j].id + ", " +
+          data[j].id + "," +
           data[j].username +
           `\n`
         );
@@ -322,6 +323,8 @@ let writeFileUsers = () => {
                   ---------------------
     `);
 }
+
+
 
 let writeBookedDates = (num, endingVal) => {
   let booked_dates = generateBookedDates(num);
@@ -389,6 +392,7 @@ let writeReservations = (num, starting = 0) => {
   return count + starting;
 }
 
+
 // let count = (writeBookedDates(6, 12502274));
 // count = writeBookedDates(7, count);
 // count = writeBookedDates(8, count);
@@ -404,12 +408,12 @@ let writeReservations = (num, starting = 0) => {
 // let users = generateUsers();
 // console.log(users.length, 'users');
 // let people = generatePeople();
-// let bookedDates = generateBookedDates(1);
+let bookedDates = generateBookedDates(1);
 // console.log(bookedDates)
-let count = writeReservations(1, 0); // ended: 24998817
+// let count = writeReservations(1, 0); // ended: 24998817
 // 1:  0 --> 2.5 | 2: 2.5 --> 5 | 3: 5 --> 7.5 | 4: 7.5 --> 10 | 5: 10 --> 12.5 | 6: 12.5 --> 15 | 7: 15 --> 17.5 | 8: 17.5 --> 20 | 9: 20 --> 22.5 | 10: 22.5 --> 25 |
 // count = writeReservations(2, count);
-console.log('!!!!!!', count, '!!!!!!');
+// console.log('!!!!!!', count, '!!!!!!');
 // count = writeReservations(2, count);
 // count = writeReservations(3, count);
 // count = writeReservations(4, count);
@@ -427,7 +431,7 @@ console.log('!!!!!!', count, '!!!!!!');
 // let bookedDates2 = generateBookedDates(2);
 // console.log(bookedDates);
 // console.log(bookedDates2);
-   // let reservations = generateReservation(bookedDates);
+   let reservations = generateReservations(bookedDates, 1);
    // console.log(reservations);
 // let numbers = getNumbers();
 // console.log(numbers)
