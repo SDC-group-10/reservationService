@@ -253,7 +253,7 @@ let generateIds = () => {
 
 let generateReservations = (bookedDates, num) => {
   // console.log(' | bookedDates', bookedDates);
-  console.log(bookedDates[0], 'bd0');
+  // console.log(bookedDates[0], 'bd0');
   let reservations = [];
   let count = 1;
   for (let i = 0; i < bookedDates.length; i++) {
@@ -285,11 +285,11 @@ let generateReservations = (bookedDates, num) => {
       reservations.push(reservation);
     }
   }
-  console.log(reservations[0], 'res0');
-  console.log(reservations[1], 'res1');
-  console.log(reservations[2], 'res2');
-  console.log(reservations[3], 'res3');
-  console.log(reservations[4], 'res4');
+  // console.log(reservations[0], 'res0');
+  // console.log(reservations[1], 'res1');
+  // console.log(reservations[2], 'res2');
+  // console.log(reservations[3], 'res3');
+  // console.log(reservations[4], 'res4');
   return reservations;
 }
  //
@@ -377,6 +377,7 @@ let writeReservations = (num, starting = 0) => {
   // console.log(bookedDates.length);
   let reservations = generateReservations(bookedDates, num);
   // console.log(reservations);
+  console.log(reservations[0]);
   let file = fs.createWriteStream(`./reservations${num}.csv`);
   for (let i = 0; i < count-1 ; i++) {
     // for (let j =0; j < reservations[i].appts.length; j++) {
@@ -392,7 +393,7 @@ let writeReservations = (num, starting = 0) => {
         reservations[i].adults + ',' +
         reservations[i].puppies + ',' +
         reservations[i].charge + ',' +
-        reservations[i].createdAt
+        reservations[i].createdAt +
         `\n`
       );
     // }
@@ -418,7 +419,7 @@ let writeReservations = (num, starting = 0) => {
 // let users = generateUsers();
 // console.log(users.length, 'users');
 // let people = generatePeople();
-let bookedDates = generateBookedDates(1);
+// let bookedDates = generateBookedDates(1);
 // console.log(bookedDates)
 // let count = writeReservations(1, 0); // ended: 24998817
 // 1:  0 --> 2.5 | 2: 2.5 --> 5 | 3: 5 --> 7.5 | 4: 7.5 --> 10 | 5: 10 --> 12.5 | 6: 12.5 --> 15 | 7: 15 --> 17.5 | 8: 17.5 --> 20 | 9: 20 --> 22.5 | 10: 22.5 --> 25 |
@@ -428,20 +429,21 @@ let bookedDates = generateBookedDates(1);
 // count = writeReservations(3, count);
 // count = writeReservations(4, count);
 
-// writeReservations(3);
-// writeReservations(4);
-// writeReservations(5);
-// writeReservations();
-// writeBookedDates(1);
-// writeReservations(7);
-// writeReservations(8);
-// writeReservations(9);
-// writeReservations(10);
+// writeReservations(1);
+// writeReservations(2, 2499965);
+// writeReservations(3, 4998977);
+// writeReservations(4, 7499141);
+// writeReservations(5, 9998193);
+// writeReservations(6, 12497840);
+// writeReservations(7, 14997986);
+// writeReservations(8, 17499758);
+// writeReservations(9, 19999334);
+// writeReservations(10, 22498383); --> 25000516
 
 // let bookedDates2 = generateBookedDates(2);
 // console.log(bookedDates);
 // console.log(bookedDates2);
-   let reservations = generateReservations(bookedDates, 1);
+   // let reservations = generateReservations(bookedDates, 1);
    // console.log(reservations);
 // let numbers = getNumbers();
 // console.log(numbers)
