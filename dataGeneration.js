@@ -259,6 +259,9 @@ let generateReservations = (bookedDates, num) => {
   for (let i = 0; i < bookedDates.length; i++) {
     for (var j = 0; j < bookedDates[i].appts.length; j++) {
       count++;
+      let listing_id = bookedDates[i].listingId;
+      let check_in = bookedDates[i].appts[j].checkIn;
+      let check_out = bookedDates[i].appts[j].checkOut;
       let booked_date_id = bookedDates[i].appts[j].id;
       let user_id = Math.floor(Math.random() * 1000000) + 1 + (1000000 * (num-1));
       let adults = Math.floor(Math.random() * 5 + 1);
@@ -269,18 +272,24 @@ let generateReservations = (bookedDates, num) => {
       createdAt = `${-1 + Number(createdAt.slice(0, 4))}`;
       createdAt = createdAt + slice;
       let reservation = {
+        listing_id: listing_id,
+        check_in: check_in,
+        check_out: check_out,
         user_id: user_id,
         adults: adults,
         puppies: puppies,
         charge: charge,
-        createdAt: createdAt,
-        booked_date_id: booked_date_id,
+        createdAt: createdAt
       };
       // console.log(reservation);
       reservations.push(reservation);
     }
   }
   console.log(reservations[0], 'res0');
+  console.log(reservations[1], 'res1');
+  console.log(reservations[2], 'res2');
+  console.log(reservations[3], 'res3');
+  console.log(reservations[4], 'res4');
   return reservations;
 }
  //
@@ -376,13 +385,14 @@ let writeReservations = (num, starting = 0) => {
         reservations[i].createdAt = '2016-06-15';
       }
       file.write(
-        (starting + i + 1) + ',' +
+        reservations[i].listing_id + ',' +
+        reservations[i].check_in + ',' +
+        reservations[i].check_out + ',' +
         reservations[i].user_id + ',' +
         reservations[i].adults + ',' +
         reservations[i].puppies + ',' +
         reservations[i].charge + ',' +
-        reservations[i].createdAt + ',' +
-        (starting + i+1) +
+        reservations[i].createdAt
         `\n`
       );
     // }
