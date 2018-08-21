@@ -9,6 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "artillery": "^1.6.0-22",
+    "body-parser": "^1.18.3",
+    "cassandra-driver": "^3.5.0",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "newrelic": "^4.8.0",
+    "nodemon": "^1.18.3",
+    "redis": "^2.8.0"
   }
 }
